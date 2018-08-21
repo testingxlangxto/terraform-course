@@ -1,0 +1,69 @@
+forking and branching
+
+fork the repo (click button fork)
+clone the fork repo, copy the url(click button clone or download)
+on your working machine type: git clone <repourl>
+//you now have a copy of the forked repo on your machine
+
+go to the dir of your repo
+//to create a new branch
+git branch <branch1>
+//to show all branch
+git branch 
+//to switch branch
+git checkout <branch1>
+//you can now work on your <branch1>
+//you can add a file
+vim sample.file
+//to show status, it will show a new file 
+git status
+//to add this file
+git add sample.file
+//to commit it on your branch1
+git commit -m "message"
+//you have now created a file on your branch, to merge it to the master
+//got back to the master branch
+git checkout master
+//merge the branch1 to the master
+git merge branch1
+//to check if the file in branch1 has been added in master, look for the file
+ls
+//if satisfied, push the master to the fork repo
+git push <repourl> master
+//check on the git console if the sample.file has been added
+
+
+
+-------set alias on repo----------------------
+//check if your remote repo has been set
+//if your repo has been clone, it will auto set your repo to alias the <repourl
+git remote -v
+//if there is a result like below, your remote has been set up
+origin <repourl> (fetch)
+origin <repourl> (push)
+//you can push directly
+git push origin master
+
+
+
+git remote add upstream <repourl>
+//to set an alias origin as the repo url
+
+//now instead of 
+git push <repourl> master
+//we use, 
+git push upstream master
+
+-------make sure your local repo is up to date--------------------------
+git pull origin master
+
+---push your branch to remote repo for review-------------------------
+//git push <repourl> <branch>
+git push origin branch1
+//see console, look for pull request
+
+
+
+
+
+ 
